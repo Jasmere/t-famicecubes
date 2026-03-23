@@ -15,26 +15,36 @@ body {
     max-width: 500px;
     margin: auto;
     padding: 20px;
-    text-align: center;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .logo {
-    width: 120px;
-    border-radius: 50%;
-    margin-top: 20px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.title {
+    text-align: left;
 }
 h1 {
-    margin: 10px 0 5px;
-    font-size: 26px;
+    margin: 0;
+    font-size: 22px;
 }
 .sub {
     opacity: 0.8;
     margin-bottom: 20px;
+    font-size: 14px;
 }
 .card {
     background: rgba(255,255,255,0.1);
     padding: 15px;
     border-radius: 15px;
     margin: 10px 0;
+    text-align: center;
 }
 a {
     color: #aee1ff;
@@ -55,8 +65,15 @@ iframe {
 <body>
 
 <div class="container">
-    <h1>T FAM PURIFIED ICE CUBES</h1>
-    <div class="sub">Owned by Ivan Salas & Juinette Salas</div>
+
+    <!-- HEADER WITH LOGO -->
+    <div class="header">
+        <div class="title">
+            <h1>T FAM PURIFIED ICE CUBES</h1>
+            <div class="sub">Owned by Ivan Salas & Juinette Salas</div>
+        </div>
+        <img src="tfamLogo.png" alt="Business Logo" class="logo">
+    </div>
 
     <div class="card">
         📞 <br>
@@ -81,8 +98,9 @@ iframe {
 
     <div class="card">
         <b>Find us here:</b>
-        <iframe src="https://www.google.com/maps?q=15.05494249174508, 120.65846409647064&output=embed"></iframe>
+        <iframe src="https://www.google.com/maps?q=15.05494249174508,120.65846409647064&output=embed"></iframe>
     </div>
+
 </div>
 
 </body>
