@@ -9,15 +9,16 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-
-    /* ❄️ BACKGROUND IMAGE */
+    
+    /* BACKGROUND IMAGE */
     background: url("tfamBg.png") no-repeat center center fixed;
     background-size: cover;
 
     color: white;
+    overflow-x: hidden;
 }
 
-/* DARK OVERLAY */
+/* DARK OVERLAY (important for readability) */
 body::after {
     content: "";
     position: fixed;
@@ -25,25 +26,8 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 40, 70, 0.65);
+    background: rgba(10, 61, 98, 0.6); /* dark blue overlay */
     z-index: -1;
-}
-
-/* SNOW EFFECT */
-body::before {
-    content: "";
-    position: fixed;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(white 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.1;
-    animation: snow 20s linear infinite;
-}
-
-@keyframes snow {
-    from { transform: translateY(-50px); }
-    to { transform: translateY(50px); }
 }
 
 .container {
@@ -55,43 +39,27 @@ body::before {
 /* HEADER */
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
+/* ❄️ LOGO WITH GLOW */
 .logo {
     width: 80px;
     height: 80px;
-    border-radius: 12px;
     object-fit: cover;
+    border-radius: 12px;
     box-shadow: 0 0 15px rgba(173, 216, 230, 0.8);
 }
 
-h1 {
-    margin: 0;
-    font-size: 22px;
-    background: linear-gradient(#ffffff, #aee1ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.sub {
-    opacity: 0.8;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-/* ORDER BUTTON */
-.order-btn {
-    display: block;
-    text-align: center;
+    .order-btn {
+    display: inline-block;
     background: linear-gradient(135deg, #00c6ff, #0072ff);
     color: white;
-    padding: 14px;
+    padding: 12px 20px;
     border-radius: 30px;
     font-weight: bold;
     text-decoration: none;
-    margin: 15px 0;
     box-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
     transition: 0.3s;
 }
@@ -100,8 +68,23 @@ h1 {
     transform: scale(1.05);
     box-shadow: 0 0 25px rgba(0, 200, 255, 1);
 }
+/* ❄️ ICE TEXT EFFECT */
+h1 {
+    margin: 0;
+    font-size: 22px;
+    background: linear-gradient(#ffffff, #aee1ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(173,216,230,0.5);
+}
 
-/* CARDS */
+.sub {
+    opacity: 0.8;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* ❄️ FROSTED GLASS CARDS */
 .card {
     background: rgba(255,255,255,0.08);
     backdrop-filter: blur(10px);
@@ -111,18 +94,37 @@ h1 {
     text-align: center;
     border: 1px solid rgba(255,255,255,0.2);
     box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+    transition: transform 0.2s ease;
 }
 
+/* subtle hover effect */
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* LINKS */
 a {
     color: #aee1ff;
     text-decoration: none;
 }
+a:hover {
+    text-decoration: underline;
+}
 
+/* MAP */
 iframe {
     width: 100%;
     height: 250px;
+    border: 0;
     border-radius: 10px;
-    border: none;
+    margin-top: 10px;
+}
+
+/* ❄️ ICE DIVIDER */
+.divider {
+    height: 2px;
+    background: linear-gradient(to right, transparent, #aee1ff, transparent);
+    margin: 15px 0;
 }
 </style>
 </head>
@@ -137,16 +139,15 @@ iframe {
             <h1>T FAM PURIFIED ICE CUBES</h1>
             <div class="sub">Owned by Ivan Salas & Juinette Salas</div>
         </div>
-        <img src="tfamLogo.png" class="logo">
+        <img src="tfamLogo.png" alt="Logo" class="logo">
     </div>
-
-    <!-- 🔥 ORDER BUTTON -->
-    <a href="https://m.me/TFamICE?text=Hi%20I%20want%20to%20order%20ice%20cubes%0AName:%0AAddress:%0AQuantity:" 
+    
+<a href="https://m.me/TFamICE?text=Hi%20I%20want%20to%20order%20ice%20cubes%0AName:%0AAddress:%0AQuantity:" 
        target="_blank" class="order-btn">
         ❄️ Order Now on Messenger
     </a>
+    <div class="divider"></div>
 
-    <!-- CONTACT -->
     <div class="card">
         📞 <br>
         <a href="tel:09913493185">09913493185</a><br>
@@ -154,24 +155,20 @@ iframe {
         <a href="tel:09763922026">09763922026</a>
     </div>
 
-    <!-- LOCATION -->
     <div class="card">
         📍 95 Jasmine St., San Isidro Village CSFP
     </div>
 
-    <!-- FACEBOOK -->
     <div class="card">
         👍 <a href="https://www.facebook.com/TFamICE" target="_blank">
         Visit our Facebook Page</a>
     </div>
 
-    <!-- EMAIL -->
     <div class="card">
         📧 <a href="mailto:tfam.icecubes@gmail.com">
         tfam.icecubes@gmail.com</a>
     </div>
 
-    <!-- MAP -->
     <div class="card">
         <b>Find us here:</b>
         <iframe src="https://www.google.com/maps?q=15.05494249174508,120.65846409647064&output=embed"></iframe>
